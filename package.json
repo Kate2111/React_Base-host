@@ -1,5 +1,5 @@
 {
-  "name": "react-base_host",
+  "name": "react_base-host",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kate2111/React-Base_host.git"
+    "url": "git+https://github.com/Kate2111/React_Base-host.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kate2111/React-Base_host/issues"
+    "url": "https://github.com/Kate2111/React_Base-host/issues"
   },
-  "homepage": "https://github.com/Kate2111/React-Base_host#readme",
+  "homepage": "https://github.com/Kate2111/React_Base-host#readme",
   "devDependencies": {
     "@types/node": "^17.0.21",
     "@types/webpack": "^5.28.0",
