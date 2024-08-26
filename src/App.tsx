@@ -2,6 +2,7 @@ import './styles/index.scss'
 import {Link, Route, Routes} from "react-router-dom";
 import {lazy, Suspense} from "react";
 import {useTheme} from "./theme/useTheme";
+import {classNames} from "./helpers/classNames/classNames";
 
 const MainPageLazy = lazy(() => import('./pages/MainPage/MainPage'));
 //@ts-ignore
@@ -11,7 +12,7 @@ const App = () => {
     const {theme, toggleTheme} = useTheme()
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>Toggle Theme</button>
             <Link to={'/'}>Главная</Link>
             <Link to={'/about'}>О сайте</Link>
