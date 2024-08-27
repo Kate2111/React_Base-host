@@ -1,12 +1,10 @@
 import './styles/index.scss'
 import {Link, Route, Routes} from "react-router-dom";
-import {lazy, Suspense} from "react";
-import {useTheme} from "./theme/useTheme";
-import {classNames} from "./helpers/classNames/classNames";
-
-const MainPageLazy = lazy(() => import('./pages/MainPage/MainPage'));
-//@ts-ignore
-const AboutPageLazy = lazy(() => new Promise(resolve => setTimeout(() => resolve(import('./pages/AboutPage/AboutPage')), 1500)));
+import {Suspense} from "react";
+import {classNames} from "shared/classNames/classNames";
+import {useTheme} from "app/provider/theme";
+import {MainPageLazy} from "pages/MainPage";
+import {AboutPageLazy} from "pages/AboutPage";
 
 const App = () => {
     const {theme, toggleTheme} = useTheme()
