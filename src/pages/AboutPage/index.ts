@@ -1,1 +1,5 @@
-export {AboutPageLazy} from "./ui/AbourPage.lazy";
+import {AboutPageAsync} from "./ui/AboutPage.async";
+
+export {
+    AboutPageAsync as AboutPage
+};

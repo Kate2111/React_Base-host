@@ -1,7 +1,9 @@
+import React from 'react';
+
 const AboutPage = () => {
     return (
         <div>
-            AboutPage
+            ABOUT PAGE
         </div>
     );
 };

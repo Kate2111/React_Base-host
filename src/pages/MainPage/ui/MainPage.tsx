@@ -1,9 +1,9 @@
-import {FC} from "react";
+import React from 'react';
 
-const MainPage: FC = () => {
+const MainPage = () => {
     return (
         <div>
-           Счетчик
+            MainPage
         </div>
     );
 };
