@@ -1,13 +1,19 @@
-import React from 'react';
-import LoveImg from 'shared/assets/img/love.png'
+import React, {FC} from "react";
+import {classNames} from "shared/lib/classNames/classNames";
+import styles from './MainPage.module.scss'
 import {Button, ButtonTheme} from "shared/ui";
+import LoveImg from 'shared/assets/img/love.png'
 
-const MainPage = () => {
+interface MainPageProps {
+    className?: string;
+}
+
+const MainPage: FC<MainPageProps> = ({className}) => {
     return (
-        <div>
+        <div className={classNames(styles.MainPage, {}, [className])}>
             MainPage
-            <img src={LoveImg} style={{ width: '150px' }} />
             <Button theme={ButtonTheme.CLEAR}>button</Button>
+            <img src={LoveImg} style={{ width: '150px' }} />
         </div>
     );
 };
