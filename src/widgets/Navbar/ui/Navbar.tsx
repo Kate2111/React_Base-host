@@ -2,20 +2,27 @@ import React, {FC} from 'react';
 import {classNames} from "shared/lib/classNames/classNames";
 import styles from './Navbar.module.scss'
 import {AppLink, AppLinkTheme} from "shared/ui";
-import {Switcher} from "widgets/Switcher";
+import {ThemeSwitcher} from "widgets/ThemeSwitcher";
+import {LangSwitcher} from "widgets/LangSwitcher";
+import {useTranslation} from "react-i18next";
 
 interface NavbarProps {
     className?: string;
 }
 
 export const Navbar: FC<NavbarProps> = ({className}) => {
+    const { t } = useTranslation();
+
     return (
         <div className={classNames(styles.Navbar, {}, [className])}>
             <div className={styles.links}>
-                <AppLink to={'/'} theme={AppLinkTheme.SECONDARY} className={styles.mainLink}>Главная</AppLink>
-                <AppLink to={'/about'} theme={AppLinkTheme.SECONDARY}>О сайте</AppLink>
+                <AppLink to={'/'} theme={AppLinkTheme.SECONDARY} className={styles.mainLink}>{t('Главная')}</AppLink>
+                <AppLink to={'/about'} theme={AppLinkTheme.SECONDARY}>{t('О сайте')}</AppLink>
             </div>
-            <Switcher/>
+            <div className={styles.buttons}>
+                <ThemeSwitcher/>
+                <LangSwitcher/>
+            </div>
         </div>
     );
 };
