@@ -9,7 +9,7 @@ interface MainPageProps {
 }
 
 const MainPage: FC<MainPageProps> = ({className}) => {
-    const { t } = useTranslation('main');
+    const { t } = useTranslation();
 
     return (
         <div className={classNames(styles.MainPage, {}, [className])}>
