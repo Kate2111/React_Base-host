@@ -14,7 +14,7 @@ const MainPage: FC<MainPageProps> = ({ className }) => {
     return (
         <div className={classNames(styles.MainPage, {}, [className])}>
             <h1>{t('Главная страница')}</h1>
-            <img src={LoveImg} style={{ width: '150px' }} alt="love" />
+            <img src={LoveImg} style={{ width: '150px' }} alt={t('love')} />
         </div>
     );
 };
