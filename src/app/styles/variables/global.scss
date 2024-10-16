@@ -1,16 +1,12 @@
 :root {
-  --font-family-main: Consolas, 'Times New Roman', serif;
-
-  --font-size-base: 16px;
-  --font-line-base: 24px;
-  --font-base: var(--font-size-base) / var(--font-line-base) var(--font-family-main);
-
-  --font-size-l: 24px;
-  --font-line-l: 32px;
-  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-
-  //размеры
-  --height-navbar: 70px;
-  --width-sidebar: 300px;
-  --width-sidebar-collapsed: 70px;
+    --font-family-main: consolas, "Times New Roman", serif;
+    --font-size-base: 16px;
+    --font-line-base: 24px;
+    --font-base: var(--font-size-base) / var(--font-line-base) var(--font-family-main);
+    --font-size-l: 24px;
+    --font-line-l: 32px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --height-navbar: 70px;
+    --width-sidebar: 300px;
+    --width-sidebar-collapsed: 70px;
 }

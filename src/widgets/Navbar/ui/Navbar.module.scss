@@ -3,20 +3,20 @@
     height: var(--height-navbar);
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     background-color: var(--inverted-bg-color);
     padding: 20px;
 }
 
 .links {
-  margin-left: var(--width-sidebar-collapsed);
+    margin-left: var(--width-sidebar-collapsed);
 }
 
 .buttons {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .mainLink {
-  margin-right: 15px;
+    margin-right: 15px;
 }
