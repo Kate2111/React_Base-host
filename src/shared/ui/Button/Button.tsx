@@ -22,6 +22,7 @@ export const Button: FC<ButtonProps> = (props) => {
     return (
         <button
             type="button"
+            data-testid="buttonId"
             className={classNames(styles.Button, {}, [className, styles[theme]])}
             {...otherProps}
         >
