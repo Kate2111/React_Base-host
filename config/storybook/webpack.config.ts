@@ -1,25 +1,38 @@
 import webpack from 'webpack';
-import {BuildPath} from "../buildConfig/types/config";
-import path from "path";
-import {BuildCssLoaders} from "../buildConfig/loaders/buildCssLoaders";
+import path from 'path';
+import { BuildPath } from '../buildConfig/types/config';
+import { BuildCssLoaders } from '../buildConfig/loaders/buildCssLoaders';
 
-export default ({ config }: { config: webpack.Configuration }) =>  {
-    const paths: BuildPath= {
+export default ({ config }: { config: webpack.Configuration }) => {
+    const newConfig = { ...config };
+
+    const paths: BuildPath = {
         build: '',
         html: '',
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src'),
-    }
+    };
 
-    config.plugins.push(
+    newConfig.plugins?.push(
         new webpack.ProvidePlugin({
-            React: 'react'
-        })
-    )
-    config.resolve.modules.push(paths.src);
-    config.resolve.extensions.push('.ts', '.tsx');
+            React: 'react',
+        }),
+    );
+    newConfig.resolve?.modules?.push(paths.src);
+    newConfig.resolve?.extensions?.push('.ts', '.tsx');
 
-    config.module.rules.push(BuildCssLoaders(true))
+    newConfig.module.rules = newConfig.module?.rules?.map((rule) => {
+        if (rule && typeof rule !== 'string' && rule.test instanceof RegExp && rule.test.test('.svg')) {
+            return { ...rule, exclude: /\.svg$/i };
+        }
+        return rule;
+    });
 
-    return config;
-}
+    newConfig.module?.rules.push({
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    });
+    newConfig.module?.rules.push(BuildCssLoaders(true));
+
+    return newConfig;
+};
